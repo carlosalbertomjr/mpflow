@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <security:ldap-server manager-dn="novompcloud@intranet.mpgo" manager-password="mpcloud123" url="ldap://dakar.intranet.mpgo:389" />
+    
+	<security:authentication-manager>
+		<security:ldap-authentication-provider user-search-filter="(sAMAccountName={0})"
+		user-search-base="cn=Users,dc=intranet,dc=mpgo"
+		group-search-base="ou=SINFO,dc=intranet,dc=mpgo" />
+	</security:authentication-manager>
+    
+	<security:http auto-config="true">
+		<!--security:intercept-url pattern="/*" access="permitAll" /-->
+		<security:intercept-url pattern="/resources/**" access="permitAll" />
+		<security:intercept-url pattern="/login" access="permitAll" />
+		<security:intercept-url pattern="/tarefas/**"   access="isAuthenticated()" />
+		<security:intercept-url pattern="/processos/**" access="isAuthenticated()" />
+		
+		<security:form-login login-page="/login" 
+               default-target-url="/"
+               authentication-failure-url="/loginfailed"
+               username-parameter="j_username" 
+               password-parameter="j_password" />
+        <security:logout logout-success-url="/" />
+        <security:csrf disabled="true"/>
+	</security:http>
+
+</beans>
