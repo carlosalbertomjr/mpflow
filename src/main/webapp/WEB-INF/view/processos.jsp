@@ -2,15 +2,15 @@
 	<div class="row">
 		<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
 			<ul class="nav nav-pills flex-column">
-				<li class="nav-item"><a class="nav-link active" href="#">Todos (${processos.size()})
-						<span class="sr-only">(current)</span>
+				<li class="nav-item"><a class="nav-link active" href="#">Todos
+						(${processos.size()}) <span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Analytics</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" href="#">Export</a></li>
 			</ul>
-
+			<h4>Categorias</h4>
 			<ul class="nav nav-pills flex-column">
 				<li class="nav-item"><a class="nav-link" href="#">Nav item</a>
 				</li>

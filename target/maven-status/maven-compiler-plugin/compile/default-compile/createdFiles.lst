@@ -1,0 +1,10 @@
+br\mp\mpgo\mpflow\repository\impl\ProcessoRepositoryImpl.class
+br\mp\mpgo\mpflow\repository\ProcessoRepository.class
+br\mp\mpgo\mpflow\service\impl\ProcessoServiceImpl.class
+br\mp\mpgo\mpflow\service\ProcessoService.class
+br\mp\mpgo\mpflow\controller\LoginController.class
+br\mp\mpgo\mpflow\controller\ProcessoController.class
+br\mp\mpgo\mpflow\controller\TarefaController.class
+br\mp\mpgo\mpflow\controller\WelcomeController.class
+br\mp\mpgo\mpflow\domain\Processo.class
+br\mp\mpgo\mpflow\controller\HomeController.class
